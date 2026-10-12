@@ -1,0 +1,10 @@
+{
+  "name": "igee401-visual-guide",
+  "version": "1.0.0",
+  "description": "Interactive waveforms and power quantities for AC controllers and rectifiers (IGEE401).",
+  "private": true,
+  "scripts": {
+    "test": "node tests/run.js",
+    "start": "python3 -m http.server 8000"
+  }
+}

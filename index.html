@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IGEE401 converter lab</title>
+  <meta name="description" content="Interactive waveforms and power quantities for AC controllers and rectifiers (IGEE401).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the simulator</a>
+  <div class="shell">
+    <nav class="rail" aria-label="Converters">
+      <div class="brand">
+        <span class="brand-name">IGEE401</span>
+        <span class="brand-sub">Converter lab</span>
+      </div>
+      <div id="nav"></div>
+      <button id="theme" class="quiet" type="button">Use dark theme</button>
+    </nav>
+
+    <main id="main">
+      <header class="head">
+        <div class="head-text">
+          <h1 id="title"></h1>
+          <p id="blurb" class="blurb"></p>
+        </div>
+        <div class="head-tools">
+          <span id="flow" class="flow" hidden></span>
+          <button id="copy" class="quiet" type="button">Copy link to these settings</button>
+          <span id="status" class="status" role="status" aria-live="polite"></span>
+        </div>
+      </header>
+
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <div class="work">
+        <div class="left">
+          <section class="controls" aria-label="Parameters">
+            <div id="presets" class="presets"></div>
+            <div id="controls" class="ctl-grid"></div>
+          </section>
+          <section id="plots" class="plots" aria-label="Waveforms"></section>
+        </div>
+
+        <aside class="side" aria-label="Readouts">
+          <div id="readouts"></div>
+          <section id="textbook" class="box"></section>
+          <section class="box">
+            <h3>Assumptions</h3>
+            <ul id="assumptions-list" class="assume"></ul>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <!-- order matters: core, models, ui -->
+  <script src="js/core/numerics.js"></script>
+  <script src="js/core/metrics.js"></script>
+  <script src="js/core/registry.js"></script>
+
+  <script src="js/models/acctrl1.js"></script>
+  <script src="js/models/acctrl3.js"></script>
+  <script src="js/models/bridge1ph.js"></script>
+  <script src="js/models/bridge3ph.js"></script>
+
+  <script src="js/ui/plot.js"></script>
+  <script src="js/ui/app.js"></script>
+</body>
+</html>
